@@ -18,9 +18,9 @@ class Restaurant(ndb.Model):
 
 class Filter(ndb.Model): # creates an object
     groupname = ndb.StringProperty()
-    zipcode = ndb.IntegerProperty()
+    zipcode = ndb.StringProperty()
     priority = ndb.StringProperty()
-    number = ndb.IntegerProperty()
+    number = ndb.StringProperty()
 
 env = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
@@ -57,9 +57,6 @@ class InitiatorPage(webapp2.RequestHandler):
     def get(self):
         template = env.get_template("templates/initiator.html")
         self.response.write(template.render())
-
-    # def post(self):
-    #     self.redirect("/initiator")
 
 class JoinerHandler(webapp2.RequestHandler):
     def get(self):
