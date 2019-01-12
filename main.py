@@ -31,7 +31,13 @@ class MainPage(webapp2.RequestHandler): # webapp2.RequestHandler processes the r
         template = env.get_template("templates/home.html")
         self.response.write(template.render())
 
-class FilterHandler(webapp2.RequestHandler):
+
+class FilterPage(webapp2.RequestHandler):
+    def get(self):
+        template = env.get_template("templates/filter.html")
+        self.response.write(template.render())
+
+class InitiatorHandler(webapp2.RequestHandler):
     def post(self):
         groupname = self.request.get("groupname") # gets information from the html file
         zipcode = self.request.get("zipcode")
@@ -44,14 +50,9 @@ class FilterHandler(webapp2.RequestHandler):
 
         # 3. Render the response
         time.sleep(2) # gives it time to render
-        self.redirect("/filterpage")
+        self.redirect("/initiator")
 
-class FilterPage(webapp2.RequestHandler):
-    def get(self):
-        template = env.get_template("templates/filter.html")
-        self.response.write(template.render())
-
-class InitiatorHandler(webapp2.RequestHandler):
+class InitiatorPage(webapp2.RequestHandler):
     def get(self):
         template = env.get_template("templates/initiator.html")
         self.response.write(template.render())
@@ -79,9 +80,9 @@ class SwipeHandler(webapp2.RequestHandler):
 
 app = webapp2.WSGIApplication([
     ("/", MainPage),
-    ("/filter", FilterHandler),
-    ("/filterpage", FilterPage),
-    ("/initiator", InitiatorHandler),
+    ("/filter", FilterPage),
+    ("/inithandler", InitiatorHandler),
+    ("/initiator", InitiatorPage),
     ("/joiner", JoinerHandler),
     ("/swipe", SwipeHandler),
 ], debug=True)
