@@ -7,3 +7,12 @@ body {
   font-family: 'Playfair Display', serif;
   text-align: center;
 }
+
+header {
+  text-align: center;
+  font-family: "Helvetica Neue"
+  font-size: 40px;
+  font-variant: small-caps;
+  animation-duration: 3s;
+  animation-name: fadein;
+}
