@@ -47,10 +47,19 @@ class JoinerHandler(webapp2.RequestHandler):
         name = self.request.get("name")
         self.redirect("/joiner")
 
+class SwipeHandler(webapp2.RequestHandler):
+    def get(self):
+        template = env.get_template("templates/swipe.html")
+        self.response.write(template.render())
+
+    def post(self):
+        self.redirect("/swipe")
+
 
 app = webapp2.WSGIApplication([
     ("/", MainPage),
     ("/filter", FilterHandler),
     ("/initator", InitiatorHandler),
     ("/joiner", JoinerHandler),
+    ("/swipe", SwipeHandler),
 ], debug=True)
