@@ -27,10 +27,8 @@ class FilterHandler(webapp2.RequestHandler):
 
     def post(self):
         name = self.request.get("name")
-<<<<<<< HEAD
 
         self.redirect("/filter")
->>>>>>> 1f0078f14135e1062aafa6997284a282170d9112
 
 class InitiatorHandler(webapp2.RequestHandler):
     def get(self):
