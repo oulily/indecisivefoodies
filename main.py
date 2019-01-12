@@ -17,9 +17,9 @@ class Restaurant(ndb.Model):
 
 class Filter(ndb.Model): # creates an object
     groupname = ndb.StringProperty()
-    zipcode = ndb.IntegerProperty()
+    zipcode = ndb.StringProperty()
     priority = ndb.StringProperty()
-    number = ndb.IntegerProperty()
+    number = ndb.StringProperty()
 
 env = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
