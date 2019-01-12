@@ -39,8 +39,8 @@ class FilterHandler(webapp2.RequestHandler):
         number = self.request.get("number")
 
         # 2. Read/write from the database
-        filter = Filter(groupname=groupname, zipcode=zipcode, priority=priority, number=number) # creates an instance of an object
-        filter.put() #adds object to database
+        # filter = Filter(groupname=groupname, zipcode=zipcode, priority=priority, number=number) # creates an instance of an object
+        # filter.put() #adds object to database
 
         # 3. Render the response
         time.sleep(2) # gives it time to render
