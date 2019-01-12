@@ -39,14 +39,14 @@ class FilterPage(webapp2.RequestHandler):
 
 class InitiatorHandler(webapp2.RequestHandler):
     def post(self):
-        groupname = self.request.get("groupname") # gets information from the html file
+        groupname = self.request.get("groupname") # gets information from the filter page
         zipcode = self.request.get("zipcode")
         priority = self.request.get("priority")
         number = self.request.get("number")
 
         # 2. Read/write from the database
-        # filter = Filter(groupname=groupname, zipcode=zipcode, priority=priority, number=number) # creates an instance of an object
-        # filter.put() #adds object to database
+        filter = Filter(groupname=groupname, zipcode=zipcode, priority=priority, number=number) # creates an instance of an object
+        filter.put() #adds filter object to database
 
         # 3. Render the response
         time.sleep(2) # gives it time to render
