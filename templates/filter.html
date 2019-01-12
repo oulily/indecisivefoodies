@@ -9,10 +9,15 @@
 <body>
   <header>
     <h1>Grumble</h1>
-    Create your Grumble!
-    <form action="/inithandler" method="post"><br>
+    Create your Grumble! Help us filter your meal selection. 
+    <form action="/inithandler" method="post">
     <h2>Group Name:</h2>
     <input type="text" name="groupname" required="required">
+    <br>
+    <h2>Group Size:</h2>
+    <input type="text" name="number" required="required">
+    <br><br>
+    <button>SUBMIT</button>
     <br>
     <h2>Zipcode:</h2>
     <input type="text" name="zipcode" required="required">
@@ -27,9 +32,5 @@
       	<option value="Distance">Distance</option>
       </select>
       <br>
-    <h2>Group Size:</h2>
-    <input type="text" name="number" required="required">
-    <br><br>
-    <button>SUBMIT</button>
   </form>
 </body>
