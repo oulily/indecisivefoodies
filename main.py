@@ -16,17 +16,16 @@ class MainPage(webapp2.RequestHandler):
         template = env.get_template("templates/home.html")
         self.response.write(template.render())
 
-    def post(self):
-        name = self.request.get("name")
-        self.redirect("/")
-
 class FilterHandler(webapp2.RequestHandler):
     def get(self):
         template = env.get_template("templates/filter.html")
         self.response.write(template.render())
-
     def post(self):
-        name = self.request.get("name")
+        groupname = self.request.get("groupname")
+        groupname = self.request.get("groupname")
+        groupname = self.request.get("groupname")
+        min = self.request.get("min")
+        max = self.request.get("max")
         self.redirect("/filter")
 
 class InitiatorHandler(webapp2.RequestHandler):
@@ -35,7 +34,6 @@ class InitiatorHandler(webapp2.RequestHandler):
         self.response.write(template.render())
 
     def post(self):
-        name = self.request.get("name")
         self.redirect("/initiator")
 
 class JoinerHandler(webapp2.RequestHandler):
