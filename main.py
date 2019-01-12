@@ -20,7 +20,37 @@ class MainPage(webapp2.RequestHandler):
         name = self.request.get("name")
         self.redirect("/")
 
+class FilterHandler(webapp2.RequestHandler):
+    def get(self):
+        template = env.get_template("templates/filter.html")
+        self.response.write(template.render())
+
+    def post(self):
+        name = self.request.get("name")
+        self.redirect("/")
+
+class InitiatorHandler(webapp2.RequestHandler):
+    def get(self):
+        template = env.get_template("templates/home.html")
+        self.response.write(template.render())
+
+    def post(self):
+        name = self.request.get("name")
+        self.redirect("/")
+
+class JoinerHandler(webapp2.RequestHandler):
+    def get(self):
+        template = env.get_template("templates/home.html")
+        self.response.write(template.render())
+
+    def post(self):
+        name = self.request.get("name")
+        self.redirect("/")
+
 
 app = webapp2.WSGIApplication([
     ("/", MainPage),
+    ("/filter", FilterHandler),
+    ("/initator", InitiatorHandler),
+    ("/joiner", JoinerHandler),
 ], debug=True)
