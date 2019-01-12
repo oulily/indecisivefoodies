@@ -6,9 +6,9 @@ import time
 
 from google.appengine.ext import ndb
 
-class Filter(nbd.Model):
-    groupname = nbd.StringProperty
-    zipcode = nbd.StringProperty
+class Filter(ndb.Model):
+    groupname = ndb.StringProperty
+    zipcode = ndb.StringProperty
 
 env = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
