@@ -27,7 +27,7 @@ class FilterHandler(webapp2.RequestHandler):
 
     def post(self):
         name = self.request.get("name")
-        self.redirect("/")
+        self.redirect("/filter.html")
 
 class InitiatorHandler(webapp2.RequestHandler):
     def get(self):
@@ -40,12 +40,12 @@ class InitiatorHandler(webapp2.RequestHandler):
 
 class JoinerHandler(webapp2.RequestHandler):
     def get(self):
-        template = env.get_template("templates/home.html")
+        template = env.get_template("templates/joiner.html")
         self.response.write(template.render())
 
     def post(self):
         name = self.request.get("name")
-        self.redirect("/")
+        self.redirect("/joiner.html")
 
 
 app = webapp2.WSGIApplication([
