@@ -6,6 +6,7 @@ import time
 
 from google.appengine.ext import ndb
 
+
 class Restaurant(ndb.Model):
     name = ndb.StringProperty()
     distance = ndb.StringProperty()
@@ -74,6 +75,12 @@ class SwipeHandler(webapp2.RequestHandler):
     def post(self):
         self.redirect("/swipe")
 
+class Person:
+    def_init_(self,code,like,dislike,superlike):
+    self.code = code
+    self.like = like
+    self.dislike = dislike
+    self.superlike = superlike
 
 app = webapp2.WSGIApplication([
     ("/", MainPage),
