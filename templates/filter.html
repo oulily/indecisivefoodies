@@ -9,7 +9,6 @@
 <body>
   <header>
     <h1 style="text-align:center;">Create your Grumble!</h1>
-  <form action="/initiator" method="post">
     Please enter your groupname:<br>
     <input type="text" groupname="groupname">
     <br>
@@ -25,7 +24,12 @@
       	<option value="Price">Price</option>
       	<option value="Distance">Distance</option>
       </select>
-      <br><br>
+      <br>
+    Number of people? (including yourself)<br>
+    <input type="text" number="number">
+    <br>
+    <form action="/initiator" method="post"><br>
     <button>submit</button>
   </form>
+  <br><br>
 </body>
