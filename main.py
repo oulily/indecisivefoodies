@@ -6,7 +6,7 @@ import time
 
 from google.appengine.ext import ndb
 
-class Filter(ndb.Model):
+class Filter(nbd.Model):
     groupname = nbd.StringProperty
     zipcode = nbd.StringProperty
 
