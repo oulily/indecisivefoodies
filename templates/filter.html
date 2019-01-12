@@ -8,27 +8,29 @@
 
 <body>
   <header>
-    <form action="/inithandler" method="post"><br>
-    <h1 style="text-align:center;">Create your Grumble!</h1>
-    Please enter your groupname:<br>
+    <h1>Grumble</h1>
+    Create your Grumble! Help us filter your meal selection. 
+    <form action="/inithandler" method="post">
+    <h2>Group Name:</h2>
     <input type="text" name="groupname" required="required">
     <br>
-    Please enter your zipcode:<br>
+    <h2>Group Size:</h2>
+    <input type="text" name="number" required="required">
+    <br><br>
+    <button>SUBMIT</button>
+    <br>
+    <h2>Zipcode:</h2>
     <input type="text" name="zipcode" required="required">
     <br>
-    When do you expect to arrive?<br>
+    <h2>Arrival Time:</h2>
     <input type="time" name="appt"
        min="0:00" max="23:59" required="required">
     <br>
-    What do you want to priortize?<br>
+    <h2>Priority:</h2>
       <select name="priority" id="selects" required="required">
         <option value="Price">Price</option>
       	<option value="Distance">Distance</option>
       </select>
       <br>
-    Number of people? (including yourself)<br>
-    <input type="text" name="number" required="required">
-    <br>
-    <button>submit</button>
   </form>
 </body>
