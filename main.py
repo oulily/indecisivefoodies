@@ -75,7 +75,8 @@ class JoinerPage(webapp2.RequestHandler):
 class PersonHandler(webapp2.RequestHandler):
     def post(self):
         code = self.request.get("code")
-        
+
+        #person = Person(code=code, )
         self.redirect("/swipe")
 
 class SwipeHandler(webapp2.RequestHandler):
