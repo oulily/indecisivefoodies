@@ -6,6 +6,15 @@ import time
 
 from google.appengine.ext import ndb
 
+class Restaurant(ndb.Model):
+    name = nbd.StringProperty
+    distance = nbd.StringProperty
+    price = nbd.StringProperty
+    im1 = nbd.BlobProperty
+    im2 = nbd.BlobProperty
+    im3 = nbd.BlobProperty
+    numResults = nbd.IntegerProperty
+
 class Filter(ndb.Model): # creates an object
     groupname = nbd.StringProperty()
     zipcode = nbd.IntegerProperty()
