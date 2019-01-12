@@ -4,7 +4,6 @@ wv.addJavascriptInterface(new Object()
 {
   public void performClick()
   {
-    // search google apis
     window.onload = function() {
     var startPos;
     var geoSuccess = function(position) {
@@ -14,6 +13,11 @@ wv.addJavascriptInterface(new Object()
   };
   navigator.geolocation.getCurrentPosition(geoSuccess);
 }; //gets users geolocation
+
+  ?location=startPos.coords.latitude,startPos.coords.longitude
+  &radius=5000
+  &types=food
+  &key=AIzaSyCjBjBHM4KRgn5WDcF_f4RxCRAGTT4dsr4
 
 
 }

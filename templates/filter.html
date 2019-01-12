@@ -12,28 +12,28 @@
     create a grumble group!<br>
     help us filter where to eat.
     <form action="/inithandler" method="post">
-    <h2>Group Name:</h2>
+    <h2>group name:</h2>
     <input type="text" name="groupname" required="required">
     <br>
-    <h2>Group Size:</h2>
+    <h2>group size:</h2>
     <input type="text" name="number" required="required">
     <br>
-    <h2>Zipcode:</h2>
+    <h2>zipcode:</h2>
     <input type="text" name="zipcode" required="required">
     <br>
-    <h2>Arrival Time:</h2>
+    <h2>arrival time:</h2>
     <input type="time" name="appt"
        min="0:00" max="23:59" required="required">
     <br>
-    <h2>Priority:</h2>
+    <h2>priority:</h2>
       <select name="priority" id="selects" required="required">
-        <option value="Price">Price</option>
-      	<option value="Distance">Distance</option>
+        <option value="Price">PRICE</option>
+      	<option value="Distance">DISTANCE</option>
       </select>
       <br><br>
-      <button>SUBMIT</button>
+      <button class="button button1">SUBMIT</button>
       <br>
-      <button>BACK</button>
+      <button class="button button1">BACK</button>
   </form>
 </body>
 
