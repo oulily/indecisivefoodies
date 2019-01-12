@@ -8,12 +8,13 @@
 
 <body>
   <header>
+    <form action="/initiator" method="post"><br>
     <h1 style="text-align:center;">Create your Grumble!</h1>
     Please enter your groupname:<br>
-    <input type="text" groupname="groupname">
+    <input type="text" groupname="groupname" required="required">
     <br>
     Please enter your zipcode:<br>
-    <input type="text" zipcode="zipcode">
+    <input type="text" zipcode="zipcode" required="required">
     <br>
     When do you expect to arrive?<br>
     <input type="time" name="appt"
@@ -26,10 +27,8 @@
       </select>
       <br>
     Number of people? (including yourself)<br>
-    <input type="text" number="number">
+    <input type="text" number="number" required="required">
     <br>
-  <form action="/initiator" method="post"><br>
-    <a href="initator.html">submit</a>
     <button>submit</button>
   </form>
 </body>

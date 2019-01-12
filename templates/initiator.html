@@ -11,8 +11,13 @@
     <h1 style="text-align:center;">Grumble Group (Name) Created!</h1>
     <br><br>
       <h2 style="text-align:center;">Your Grumble Code: ####</h2>
-      <br>
-      
+      <p id="number"></p>
+      <script>
+      var min = 100000;
+      var max = 999999;
+      var randomNumber = Math.floor(Math.random() * (max-min) + min);
+      document.getElementById("number").innerHTML = randomNumber;
+      </script>
       <h3 style="text-align:center;">Share your code with friends:</h3>
     <br><br>
 </body>
