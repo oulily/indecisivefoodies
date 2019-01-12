@@ -57,9 +57,6 @@ class InitiatorPage(webapp2.RequestHandler):
         template = env.get_template("templates/initiator.html")
         self.response.write(template.render())
 
-    # def post(self):
-    #     self.redirect("/initiator")
-
 class JoinerHandler(webapp2.RequestHandler):
     def get(self):
         template = env.get_template("templates/joiner.html")
