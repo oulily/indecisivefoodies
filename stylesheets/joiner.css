@@ -57,7 +57,6 @@ h2{
   color: black;
 }
 
-.input-element{
-font-size: 100px; 
-width: 400px;
+.heighttext{
+  height:30px
 }
