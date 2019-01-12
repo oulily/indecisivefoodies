@@ -16,6 +16,8 @@ class Restaurant(ndb.Model):
     im3 = ndb.BlobProperty()
     numResults = ndb.IntegerProperty()
 
+class Person(ndb.Model):
+
 class Filter(ndb.Model): # creates an object
     groupname = ndb.StringProperty()
     zipcode = ndb.StringProperty()
