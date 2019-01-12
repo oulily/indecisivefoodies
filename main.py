@@ -7,11 +7,11 @@ import time
 from google.appengine.ext import ndb
 
 class Filter(ndb.Model): # creates an object
-    groupname = nbd.StringProperty
-    zipcode = nbd.IntegerProperty
-    appt = nbd.TimeProperty
-    priority = nbd.StringProperty
-    number = nbd.IntegerProperty
+    groupname = nbd.StringProperty()
+    zipcode = nbd.IntegerProperty()
+    appt = nbd.TimeProperty()
+    priority = nbd.StringProperty()
+    number = nbd.IntegerProperty()
 
 env = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
