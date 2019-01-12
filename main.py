@@ -4,7 +4,9 @@ import os
 import logging
 import time
 
+
 from google.appengine.ext import ndb
+
 
 
 class Restaurant(ndb.Model):
@@ -21,6 +23,12 @@ class Filter(ndb.Model): # creates an object
     zipcode = ndb.StringProperty()
     priority = ndb.StringProperty()
     number = ndb.StringProperty()
+
+class Person(ndb.Model):
+    code = ndb.IntegerProperty()
+    like = ndb.BlobProperty()
+    dislike= ndb.BlobProperty()
+    superlike = ndb.BlobProperty()
 
 env = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
@@ -75,12 +83,7 @@ class SwipeHandler(webapp2.RequestHandler):
     def post(self):
         self.redirect("/swipe")
 
-class Person(ndb.Model):
-    def get(self):
-        code = ndb.IntegerProperty()
-        like = ndb.BlobProperty()
-        dislike= ndb.BlobProperty()
-        superlike = ndb.BlobProperty()
+
 
 
 app = webapp2.WSGIApplication([
