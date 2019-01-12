@@ -1,0 +1,26 @@
+body {
+  background: linear-gradient(#d5eeff, #1d97c1);
+  height: 100%;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+}
+
+header {
+  text-align: center;
+  font-size: 40px;
+  animation-duration: 3s;
+  animation-name: fadein;
+}
+
+#submitbutton {
+  background-color: #005792;
+  color: white;
+  padding: 7px 15px 7px 15px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 12px;
+  display: inline-block;
+}
