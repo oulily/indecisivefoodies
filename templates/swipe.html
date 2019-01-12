@@ -14,8 +14,14 @@
 </section>
 
 <br>
-<button type="button" class="btn btn-info btn-circle btn-xl"><i class="fa fa-check"></i>
+<button onclick="myFunction()" type="button" class="btn btn-info btn-circle btn-xl"><i class="fa fa-check"></i>
                             </button>
+    <script>
+    function myFunction() {
+      document.getElementById("demo").innerHTML = "YOU CLICKED ME!";
+    }
+    </script>
+
 <button type="button" class="btn btn-warning btn-circle btn-xl"><i class="fa fa-times"></i>
                             </button>
 <button type="button" class="btn btn-danger btn-circle btn-xl"><i class="fa fa-heart"></i>
