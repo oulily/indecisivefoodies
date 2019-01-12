@@ -1,3 +1,22 @@
+body {
+  background: #b11a21;
+  height: 100%;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: "Helvetica Neue";
+  text-align: center;
+}
+
+title {
+  text-align: center;
+  font-family: "Helvetica Neue";
+  font-size: 40px;
+  font-variant: small-caps;
+  animation-duration: 3s;
+  animation-name: fadein;
+}
+
 .btn-circle.btn-xl {
     width: 70px;
     height: 70px;
