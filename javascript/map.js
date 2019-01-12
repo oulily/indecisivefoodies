@@ -11,21 +11,11 @@ window.onload = function(){
   window.setTimeout(initMap, 500);
 }
 
-function initMap() {
-  console.log('initMap')
-
-  map = new google.maps.Map(document.getElementById('map'), {
-    center: currentLocation,
-    zoom: 15
-  });
-  infoWindow = new google.maps.InfoWindow();
-  getCurrentLocation();
-}
 function getPlacesNearby(){
   console.log('getPlacesNearby')
 
   //add current location
-  var url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=500&type=restaurant&key=AIzaSyCjBjBHM4KRgn5WDcF_f4RxCRAGTT4dsr4'
+  var url = 'https://maps.googleapis.com/maps/api/place/details/json?placeid=ChIJrTLr-GyuEmsRBfy61i59si0&key=YOUR_API_KEY'
 
   var server = 'http://localhost:8080/?url='+ encodeURIComponent(url);
   var request = new XMLHttpRequest();
