@@ -7,11 +7,10 @@ import time
 from google.appengine.ext import ndb
 
 class Filter(ndb.Model): # creates an object
-    groupname = nbd.StringProperty()
-    zipcode = nbd.IntegerProperty()
-    appt = nbd.TimeProperty()
-    priority = nbd.StringProperty()
-    number = nbd.IntegerProperty()
+    groupname = ndb.StringProperty()
+    zipcode = ndb.IntegerProperty()
+    priority = ndb.StringProperty()
+    number = ndb.IntegerProperty()
 
 env = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
@@ -27,12 +26,11 @@ class FilterHandler(webapp2.RequestHandler):
     def post(self):
         groupname = self.request.get("groupname") # gets information from the html file
         zipcode = self.request.get("zipcode")
-        appt = self.request.get("appt")
         priority = self.request.get("priority")
         number = self.request.get("number")
 
         # 2. Read/write from the database
-        filter = Filter(groupname=groupname, zipcode=zipcode, appt=appt, priority=priority, number=number) # creates an instance of an object
+        filter = Filter(groupname=groupname, zipcode=zipcode, priority=priority, number=number) # creates an instance of an object
         filter.put() #adds object to database
 
         # 3. Render the response
