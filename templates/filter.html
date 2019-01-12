@@ -7,10 +7,20 @@
 </head>
 <body>
   <form action="/initiator.html">
+    Please enter your groupname:<br>
+    <input type="text" groupname="groupname">
+    <br>
     Please enter your zipcode:<br>
     <input type="text" zipcode="zipcode">
     <br>
+    When do you expect to arrive?<br>
+    <input type="time" name="appt"
+       min="0:00" max="23:59" required="required">
+    What do you want to priortize?<br>
+    <select name="priority" id="selects" required="required">
+      	<option value="Price">Price</option>
+      	<option value="Distance">Distance</option>
+      </select>
     <button id="submit">submit</button>
-    <input type="submit" value="Submit">
   </form>
 </body>
