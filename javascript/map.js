@@ -27,7 +27,7 @@ function getPlacesNearby(){
   //add current location
   var url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=500&type=restaurant&key=AIzaSyCjBjBHM4KRgn5WDcF_f4RxCRAGTT4dsr4'
 
-  var server = 'http://localhost:3001/?url='+ encodeURIComponent(url);
+  var server = 'http://localhost:8080/?url='+ encodeURIComponent(url);
   var request = new XMLHttpRequest();
   request.onreadystatechange = function() {
     if (request.readyState == 4 && request.status == 200) {
@@ -47,14 +47,9 @@ function onPlacesSuccess(resp) {
   var location = window.location.path
   for (var i = 0; i < resp.length; i++) {
     debugger;
-    if (location == '/nearby.html') {
+    if (location == '/swipe.html') {
       var ref = resp[i].photos[0].photo_reference;
-      //if current page is nearby.html
       getPhoto(ref);
-    } else if (location == '/GO.html') {
-      //if current page is go.html
-      createMarker(resp[i]);
-    }
   }
   addPlace(resp);
 }
@@ -64,8 +59,8 @@ function onPlacesSuccess(resp) {
 
 function getPhoto(ref) {
   console.log('getPhoto')
-  var url = 'https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=' + ref + '&key=AIzaSyAbzn5BJaxvdYIzkExoQHnZkq5hVIvMCeI'
-  var server = 'http://localhost:3001/?url='+ encodeURIComponent(url);
+  var url = 'https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=' + ref + '&key=AIzaSyCjBjBHM4KRgn5WDcF_f4RxCRAGTT4dsr4'
+  var server = 'http://localhost:8080/?url='+ encodeURIComponent(url);
   var request = new XMLHttpRequest();
   request.onreadystatechange = function() {
     if (request.readyState == 4 && request.status == 200) {
