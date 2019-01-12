@@ -30,3 +30,22 @@ h2{
   animation-duration: 3s;
   animation-name: fadein;
 }
+
+.button{
+  background-color:#b11a21
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.button1:hover{
+ color:#000000;
+ background-color:#FFFFFF;
+}
