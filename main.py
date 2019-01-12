@@ -7,13 +7,13 @@ import time
 from google.appengine.ext import ndb
 
 class Restaurant(ndb.Model):
-    name = ndb.StringProperty
-    distance = ndb.StringProperty
-    price = ndb.StringProperty
-    im1 = ndb.BlobProperty
-    im2 = ndb.BlobProperty
-    im3 = ndb.BlobProperty
-    numResults = ndb.IntegerProperty
+    name = ndb.StringProperty()
+    distance = ndb.StringProperty()
+    price = ndb.StringProperty()
+    im1 = ndb.BlobProperty()
+    im2 = ndb.BlobProperty()
+    im3 = ndb.BlobProperty()
+    numResults = ndb.IntegerProperty()
 
 class Filter(ndb.Model): # creates an object
     groupname = ndb.StringProperty()
