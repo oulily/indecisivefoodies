@@ -56,3 +56,8 @@ h2{
   background-color: white;
   color: black;
 }
+
+.input-element{
+font-size: 100px; 
+width: 400px;
+}
