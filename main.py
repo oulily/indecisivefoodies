@@ -5,6 +5,7 @@ import logging
 import time
 
 from google.appengine.ext import ndb
+from Tkinter import *
 
 
 class Restaurant(ndb.Model):
@@ -82,6 +83,19 @@ class Person(ndb.Model):
         dislike= ndb.BlobProperty()
         superlike = ndb.BlobProperty()
 
+class Comp:
+    def performClick():
+        performClick = Tk()
+        b1 = Button(None, text="Like",command=tenbuttonCallback)
+        b2 = Button(None, text="Dislike",command=tenbuttonCallback)
+        b3 = Button(None, text="Superlike",command=tenbuttonCallback)
+
+    def buttonCallLike():
+        list1.append("b1")
+    def buttonCallDislike():
+        list2.append("b2")
+    def buttonCallSuperlike():
+        list3.append("b3")
 
 app = webapp2.WSGIApplication([
     ("/", MainPage),
