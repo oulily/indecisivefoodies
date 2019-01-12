@@ -1,5 +1,5 @@
 body {
-  background: linear-gradient(#d5eeff, #1d97c1);
+  background: #b11a21;
   height: 100%;
   margin: 0;
   background-repeat: no-repeat;
@@ -10,7 +10,9 @@ body {
 
 header {
   text-align: center;
+  font-family: "Helvetica Neue"
   font-size: 40px;
+  font-variant: small-caps;
   animation-duration: 3s;
   animation-name: fadein;
 }
