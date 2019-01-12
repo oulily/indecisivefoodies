@@ -16,8 +16,6 @@ class Restaurant(ndb.Model):
     im3 = ndb.BlobProperty()
     numResults = ndb.IntegerProperty()
 
-class Person(ndb.Model):
-
 class Filter(ndb.Model): # creates an object
     groupname = ndb.StringProperty()
     zipcode = ndb.StringProperty()
@@ -26,8 +24,8 @@ class Filter(ndb.Model): # creates an object
 
 class Person(ndb.Model):
     code = ndb.IntegerProperty()
-    like = ndb.StructuredProperty()
-    superlike = ndb.StructuredProperty()
+    like = ndb.StructuredProperty(Restaurant)
+    superlike = ndb.StructuredProperty(Restaurant)
 
 env = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
