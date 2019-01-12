@@ -3,6 +3,7 @@ import jinja2
 import os
 import logging
 import time
+from tkinter import *
 
 from google.appengine.ext import ndb
 from Tkinter import *
@@ -22,6 +23,13 @@ class Filter(ndb.Model): # creates an object
     zipcode = ndb.StringProperty()
     priority = ndb.StringProperty()
     number = ndb.StringProperty()
+
+class Person(ndb.Model):
+    def get(self):
+        code = ndb.IntegerProperty()
+        like = ndb.BlobProperty()
+        dislike= ndb.BlobProperty()
+        superlike = ndb.BlobProperty()
 
 env = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
@@ -76,26 +84,8 @@ class SwipeHandler(webapp2.RequestHandler):
     def post(self):
         self.redirect("/swipe")
 
-class Person(ndb.Model):
-    def get(self):
-        code = ndb.IntegerProperty()
-        like = ndb.BlobProperty()
-        dislike= ndb.BlobProperty()
-        superlike = ndb.BlobProperty()
 
-class Comp:
-    def performClick():
-        performClick = Tk()
-        b1 = Button(None, text="Like",command=tenbuttonCallback)
-        b2 = Button(None, text="Dislike",command=tenbuttonCallback)
-        b3 = Button(None, text="Superlike",command=tenbuttonCallback)
 
-    def buttonCallLike():
-        list1.append("b1")
-    def buttonCallDislike():
-        list2.append("b2")
-    def buttonCallSuperlike():
-        list3.append("b3")
 
 app = webapp2.WSGIApplication([
     ("/", MainPage),
