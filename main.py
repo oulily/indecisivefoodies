@@ -6,6 +6,10 @@ import time
 
 from google.appengine.ext import ndb
 
+class Filter(ndb.Model):
+    groupname = nbd.StringProperty
+    zipcode = nbd.StringProperty
+
 env = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
     extensions=['jinja2.ext.autoescape'],
@@ -22,10 +26,10 @@ class FilterHandler(webapp2.RequestHandler):
         self.response.write(template.render())
     def post(self):
         groupname = self.request.get("groupname")
-        groupname = self.request.get("groupname")
-        groupname = self.request.get("groupname")
+        zipcode = self.request.get("zipcode")
         min = self.request.get("min")
         max = self.request.get("max")
+        priority = self.request.get("priority")
         self.redirect("/filter")
 
 class InitiatorHandler(webapp2.RequestHandler):
@@ -57,7 +61,7 @@ class SwipeHandler(webapp2.RequestHandler):
 app = webapp2.WSGIApplication([
     ("/", MainPage),
     ("/filter", FilterHandler),
-    ("/initator", InitiatorHandler),
+    ("/initiator", InitiatorHandler),
     ("/joiner", JoinerHandler),
     ("/swipe", SwipeHandler),
 ], debug=True)
