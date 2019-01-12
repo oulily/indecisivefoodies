@@ -10,7 +10,16 @@ body {
 
 title {
   text-align: center;
-  font-family: "Helvetica Neue"
+  font-family: "Helvetica Neue";
+  font-size: 40px;
+  font-variant: small-caps;
+  animation-duration: 3s;
+  animation-name: fadein;
+}
+
+header{
+  text-align: center;
+  font-family: "Helvetica Neue";
   font-size: 40px;
   font-variant: small-caps;
   animation-duration: 3s;
