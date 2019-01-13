@@ -1,16 +1,6 @@
 function getPlacesNearby(){
   console.log('getPlacesNearby')
   const proxyurl = "https://cors-anywhere.herokuapp.com/";
-  var request = new XMLHttpRequest();
-  request.onreadystatechange = function()
-  {
-    if (request.readyState == 4 && request.status == 200)
-    {
-      var resp = JSON.parse(request.response);
-      console.log(resp.results.name);
-
-    }
-  }
 
   var request = new XMLHttpRequest();
   request.onreadystatechange = function() {
@@ -38,8 +28,7 @@ function placeNames(results) {
 }
 
 function placePics(results){
-  console.log('placenames')
+  console.log('placepics')
   document.getElementById("firstpic").src = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=" + results[0].photos[2] + "&key=AIzaSyCjBjBHM4KRgn5WDcF_f4RxCRAGTT4dsr4";
 }
-
 getPlacesNearby();
