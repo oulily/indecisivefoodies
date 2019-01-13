@@ -8,7 +8,7 @@ function getPlacesNearby(){
   request.onreadystatechange = function() {
     if (request.readyState == 4 && request.status == 200) {
       var resp = JSON.parse(request.response);
-      res = resp.results;
+      placeNames(resp.results);
     }
   }
 
@@ -19,7 +19,7 @@ function getPlacesNearby(){
 }
 
 function placeNames(results) {
-  console.log('placeNames')
+  console.log('placenames')
   // for (var i = 0; i < 6; i++) {
     document.getElementById("first").innerHTML = results[0].name;
     document.getElementById("second").innerHTML = results[1].name;
@@ -30,4 +30,4 @@ function placeNames(results) {
   // }
 }
 
-placeNames(getPlacesNearby());
+getPlacesNearby();
