@@ -136,6 +136,6 @@ app = webapp2.WSGIApplication([
     ("/joiner", JoinerPage),
     ("/personhandler", PersonHandler),
     ("/swipe", SwipePage),
-    ("/resultshandler", ResultsHandler)
+    ("/resultshandler", ResultsHandler),
     ("/results", ResultsPage),
 ], debug=True)
