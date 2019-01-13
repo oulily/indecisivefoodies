@@ -30,4 +30,4 @@ function placeNames(results) {
   // }
 }
 
-placeNames(getPlacesNearby())
+placeNames(getPlacesNearby());
