@@ -27,7 +27,7 @@ h2{
   font-family: "Helvetica Neue";
   color: white;
   font-size: 20px;
-  font-variant: small-caps;
+  letter-spacing: 2px;
   animation-duration: 3s;
   animation-name: fadein;
 }
