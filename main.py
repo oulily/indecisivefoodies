@@ -26,19 +26,14 @@ class Person(ndb.Model):
     name = ndb.StringProperty()
     code = ndb.IntegerProperty()
 
-<<<<<<< HEAD
+
 class Like(ndb.Model):
-    name = ndb.StringProperty()
-    rest = ndb.StringProperty()
-=======
-class Likes(ndb.Model):
     friend = ndb.StringProperty()
     rest = ndb.StringProperty()
 
-class Superlikes(ndb.Model):
+class Superlike(ndb.Model):
     friend2 = ndb.StringProperty()
     rest2 = ndb.StringProperty()
->>>>>>> 2b1dad0fb65be64425fe5a14f2fcbef8453a39fb
 
 env = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
