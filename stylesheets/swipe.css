@@ -30,9 +30,9 @@ h2{
   animation-name: fadein;
 }
 
-image{
-  width:500;
-  height:400;
+img{
+  width:400px;
+  height:300px;
 }
 .btn-circle.btn-xl {
     width: 70px;
