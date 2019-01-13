@@ -30,7 +30,7 @@
 
 function getLocation() {
   if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(returnPosition);
+    navigator.geolocation.getCurrentPosition(returnPosition(position));
   } else {
     x.innerHTML = "Geolocation is not supported by this browser.";
   }
