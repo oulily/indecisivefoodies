@@ -27,7 +27,7 @@ function getPlacesNearby(){
   request.onreadystatechange = function() {
     if (request.readyState == 4 && request.status == 200) {
       var resp = JSON.parse(request.response);
-      console.log(resp.results);
+      console.log(resp.results.name);
       onPlacesSuccess(resp);
     }
   }
@@ -107,14 +107,14 @@ function handleLocationError(browserHasGeolocation) {
       console.log('Browser doesnt support Geolocation');
     }
 }
-function onPositionSuccess(position) {
-  console.log('onPositionSuccess')
-  var url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location='+'position.coords.latitude'+','+'position.coords.longitude'+'&radius=1500&type=restaurant&keyword=cruise&key=AIzaSyCjBjBHM4KRgn5WDcF_f4RxCRAGTT4dsr4'
-  // currentLocation = {
-  //   lat: position.coords.latitude,
-  //   lng: position.coords.longitude
-  // };
-  // console.log(currentLocation)
-  getPlacesNearby();
-
-}
+// function onPositionSuccess(position) {
+//   console.log('onPositionSuccess')
+//   var url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location='+'position.coords.latitude'+','+'position.coords.longitude'+'&radius=1500&type=restaurant&keyword=cruise&key=AIzaSyCjBjBHM4KRgn5WDcF_f4RxCRAGTT4dsr4'
+//   // currentLocation = {
+//   //   lat: position.coords.latitude,
+//   //   lng: position.coords.longitude
+//   // };
+//   // console.log(currentLocation)
+//   getPlacesNearby();
+//
+// }
