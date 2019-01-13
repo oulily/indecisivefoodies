@@ -25,7 +25,11 @@ function placeNames(results) {
     document.getElementById("fifth").innerHTML = results[4].name;
     document.getElementById("sixth").innerHTML = results[5].name;
   // }
+}
 
+function placePics(results){
+  console.log('placenames')
+  document.getElementById("firstpic").src = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=" + results[0].photos[2] + "&key=AIzaSyCjBjBHM4KRgn5WDcF_f4RxCRAGTT4dsr4";
 }
 
 getPlacesNearby();
