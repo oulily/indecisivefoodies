@@ -7,6 +7,7 @@ function getPlacesNearby(){
     if (request.readyState == 4 && request.status == 200) {
       var resp = JSON.parse(request.response);
       placeNames(resp.results);
+      placePics(resp.results);
     }
   }
 
