@@ -13,17 +13,17 @@
     help us filter where to eat.
     <form action="/inithandler" method="post">
     <h2>group name:</h2>
-    <input type="text" name="groupname" required="required">
+    <input class="heighttext" type="text" name="groupname" required="required" placeholder="ex. indecisive foodies">
     <br>
     <h2>group size:</h2>
-    <input type="text" name="number" required="required" placeholder="Input numerical ex.4">
+    <input class="heighttext" type="text" name="number" required="required" placeholder="ex. 4">
     <h2>zipcode:</h2>
-    <input type="text" name="zipcode" required="required" maxlength="5">
+    <input class="heighttext" type="text" name="zipcode" required="required" maxlength="5" placeholder="ex. 93117">
     <br>
     <h2>priority:</h2>
-      <select name="priority" id="selects" required="required">
-        <option value="Low Price">PRICE</option>
-      	<option value="Distance">DISTANCE</option>
+      <select class="heighttext" name="priority" id="selects" required="required">
+        <option value="Distance">DISTANCE</option>
+      	<option value="Rating"> RATING </option>
       </select>
       <br><br>
       <button class="button button1">SUBMIT</button>

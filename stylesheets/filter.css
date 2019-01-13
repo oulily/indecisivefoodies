@@ -26,7 +26,7 @@ h2{
   text-align: center;
   font-family: "Helvetica Neue";
   color: white;
-  font-size: 20px;
+  font-size: 25px;
   letter-spacing: 2px;
   animation-duration: 3s;
   animation-name: fadein;
@@ -56,4 +56,9 @@ h2{
 .button1:hover {
   background-color: white;
   color: black;
+}
+
+.heighttext{
+  height:30px;
+  font-size:20px;
 }
