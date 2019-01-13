@@ -7,6 +7,7 @@ function getPlacesNearby(){
     if (request.readyState == 4 && request.status == 200) {
       var resp = JSON.parse(request.response);
       placeNames(resp.results);
+      placePics(resp.results);
     }
   }
 
@@ -29,6 +30,6 @@ function placeNames(results) {
 
 function placePics(results){
   console.log('placepics')
-  document.getElementById("firstpic").src = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=" + results[0].photos[2] + "&key=AIzaSyCjBjBHM4KRgn5WDcF_f4RxCRAGTT4dsr4";
+  document.getElementById("firstpic").src = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=" + results[0].photos[0].photo_reference + "&key=AIzaSyCjBjBHM4KRgn5WDcF_f4RxCRAGTT4dsr4";
 }
 getPlacesNearby();
