@@ -25,7 +25,7 @@ function placeNames(results) {
     document.getElementById("fifth").innerHTML = results[4].name;
     document.getElementById("sixth").innerHTML = results[5].name;
   // }
->>>>>>> afe9e2fa6d55314700481c853019e1d49edd5f37
+
 }
 
 getPlacesNearby();
