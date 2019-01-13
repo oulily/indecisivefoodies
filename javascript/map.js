@@ -1,9 +1,7 @@
-var currentLocation;
-
-
 function getPlacesNearby(){
   console.log('getPlacesNearby')
   const proxyurl = "https://cors-anywhere.herokuapp.com/";
+<<<<<<< HEAD
   var request = new XMLHttpRequest();
   request.onreadystatechange = function()
   {
@@ -17,33 +15,38 @@ function getPlacesNearby(){
 
 
 
+=======
+
+  var request = new XMLHttpRequest();
+  var res;
+  request.onreadystatechange = function() {
+    if (request.readyState == 4 && request.status == 200) {
+      var resp = JSON.parse(request.response);
+      placeNames(resp.results);
+    }
+  }
+>>>>>>> afe9e2fa6d55314700481c853019e1d49edd5f37
 
   request.open("GET", proxyurl + "https://maps.googleapis.com/maps/api/place/textsearch/json?query=restaurants+in+isla+vista&key=AIzaSyCjBjBHM4KRgn5WDcF_f4RxCRAGTT4dsr4");
-
   console.log('sending request to places')
   request.send();
+<<<<<<< HEAD
 
+=======
+  return res;
+}
+
+function placeNames(results) {
+  console.log('placenames')
+  // for (var i = 0; i < 6; i++) {
+    document.getElementById("first").innerHTML = results[0].name;
+    document.getElementById("second").innerHTML = results[1].name;
+    document.getElementById("third").innerHTML = results[2].name;
+    document.getElementById("fourth").innerHTML = results[3].name;
+    document.getElementById("fifth").innerHTML = results[4].name;
+    document.getElementById("sixth").innerHTML = results[5].name;
+  // }
+>>>>>>> afe9e2fa6d55314700481c853019e1d49edd5f37
 }
 
 getPlacesNearby();
-// function getCurrentLocation(){
-//   console.log('getCurrentLocation')
-//
-//   if (navigator.geolocation) {
-//     navigator.geolocation.getCurrentPosition(onPositionSuccess, function(error) {
-//       console.log(error.message);
-//       handleLocationError(true);
-//     });
-//   } else {
-//     handleLocationError();
-//   }
-// }
-// function handleLocationError(browserHasGeolocation) {
-//   console.log('handleLocationError')
-//
-//     if (browserHasGeolocation){
-//       console.log('Error: The Geolocation service failed.');
-//     } else {
-//       console.log('Browser doesnt support Geolocation');
-//     }
-// }
