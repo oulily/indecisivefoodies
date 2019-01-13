@@ -20,14 +20,14 @@ function getPlacesNearby(){
 
 function placeNames(results) {
   console.log('placeNames')
-  for (var i = 0; i < 6; i++) {
+  // for (var i = 0; i < 6; i++) {
     document.getElementById("first").innerHTML = results[0].name;
     document.getElementById("second").innerHTML = results[1].name;
     document.getElementById("third").innerHTML = results[2].name;
     document.getElementById("fourth").innerHTML = results[3].name;
     document.getElementById("fifth").innerHTML = results[4].name;
     document.getElementById("sixth").innerHTML = results[5].name;
-  }
+  // }
 }
 
 placeNames(getPlacesNearby())
