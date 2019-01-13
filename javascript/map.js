@@ -1,6 +1,3 @@
-var currentLocation;
-
-
 function getPlacesNearby(){
   console.log('getPlacesNearby')
 
@@ -10,40 +7,27 @@ function getPlacesNearby(){
   request.onreadystatechange = function() {
     if (request.readyState == 4 && request.status == 200) {
       var resp = JSON.parse(request.response);
-      console.log(resp.results.name);
-      onPlacesSuccess(resp);
+      var res = resp.results;
     }
   }
-
-
-
   // header("Access-Control-Allow-Credentials:true");
 
   request.open("GET", proxyurl + "https://maps.googleapis.com/maps/api/place/textsearch/json?query=restaurants+in+isla+vista&key=AIzaSyCjBjBHM4KRgn5WDcF_f4RxCRAGTT4dsr4");
-
   console.log('sending request to places')
   request.send();
+  return res;
 }
 
-getPlacesNearby();
-// function getCurrentLocation(){
-//   console.log('getCurrentLocation')
-//
-//   if (navigator.geolocation) {
-//     navigator.geolocation.getCurrentPosition(onPositionSuccess, function(error) {
-//       console.log(error.message);
-//       handleLocationError(true);
-//     });
-//   } else {
-//     handleLocationError();
-//   }
-// }
-// function handleLocationError(browserHasGeolocation) {
-//   console.log('handleLocationError')
-//
-//     if (browserHasGeolocation){
-//       console.log('Error: The Geolocation service failed.');
-//     } else {
-//       console.log('Browser doesnt support Geolocation');
-//     }
-// }
+function placeNames(results) {
+  console.log('placeNames')
+  for (var i = 0; i < 6; i++) {
+    document.getElementById("first").innerHTML = results[0].name;
+    document.getElementById("second").innerHTML = results[1].name;
+    document.getElementById("third").innerHTML = results[2].name;
+    document.getElementById("fourth").innerHTML = results[3].name;
+    document.getElementById("fifth").innerHTML = results[4].name;
+    document.getElementById("sixth").innerHTML = results[5].name;
+  }
+}
+
+placeNames(getPlacesNearby())
