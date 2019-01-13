@@ -4,10 +4,11 @@ function getPlacesNearby(){
   const proxyurl = "https://cors-anywhere.herokuapp.com/";
 
   var request = new XMLHttpRequest();
+  var res;
   request.onreadystatechange = function() {
     if (request.readyState == 4 && request.status == 200) {
       var resp = JSON.parse(request.response);
-      var res = resp.results;
+      res = resp.results;
     }
   }
 
