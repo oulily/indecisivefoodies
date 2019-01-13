@@ -1,8 +1,6 @@
 function getPlacesNearby(){
   console.log('getPlacesNearby')
   const proxyurl = "https://cors-anywhere.herokuapp.com/";
-<<<<<<< HEAD
-<<<<<<< HEAD
   var request = new XMLHttpRequest();
   request.onreadystatechange = function()
   {
@@ -15,11 +13,6 @@ function getPlacesNearby(){
   }
 
   var request = new XMLHttpRequest();
-
-=======
-
-  var request = new XMLHttpRequest();
->>>>>>> 877b23b816dc575a2a39ab0d39099a05034eeb91
   request.onreadystatechange = function() {
     if (request.readyState == 4 && request.status == 200) {
       var resp = JSON.parse(request.response);
