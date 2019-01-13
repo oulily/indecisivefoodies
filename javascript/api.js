@@ -1,3 +1,27 @@
+// WebSettings ws = wv.getSettings();
+// ws.setJavaScriptEnabled(true);
+// wv.addJavascriptInterface(new Object()
+// {
+//   public void performClick()
+//   {
+//     window.onload = function() {
+//     var startPos;
+//     var geoSuccess = function(position) {
+//     startPos = position;
+//     document.getElementById('startLat').innerHTML = startPos.coords.latitude;
+//     document.getElementById('startLon').innerHTML = startPos.coords.longitude;
+//   };
+//   navigator.geolocation.getCurrentPosition(geoSuccess);
+// }; //gets users geolocation
+//
+//   ?location=startPos.coords.latitude,startPos.coords.longitude
+//   &radius=5000
+//   &types=food
+//   &key=AIzaSyCjBjBHM4KRgn5WDcF_f4RxCRAGTT4dsr4
+//
+//
+// }
+
 function getPlacesNearby(){
   console.log('getPlacesNearby')
   const proxyurl = "https://cors-anywhere.herokuapp.com/";
@@ -13,7 +37,7 @@ function getPlacesNearby(){
     }
   }
 
-  request.open("GET", proxyurl + "https://maps.googleapis.com/maps/api/place/textsearch/json?query=restaurants+in+isla+vista&key=AIzaSyCjBjBHM4KRgn5WDcF_f4RxCRAGTT4dsr4");
+  request.open("GET", proxyurl + "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=1500&type=restaurant&key=AIzaSyCjBjBHM4KRgn5WDcF_f4RxCRAGTT4dsr4");
   console.log('sending request to places')
   request.send();
 }
