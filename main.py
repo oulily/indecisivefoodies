@@ -100,8 +100,6 @@ class SwipePage(webapp2.RequestHandler):
 
         likes = Like.query().fetch()
 
-
-
         template = env.get_template("templates/swipe.html")
         self.response.write(template.render())
 
