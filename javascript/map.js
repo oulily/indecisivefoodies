@@ -4,7 +4,9 @@ var currentLocation;
 function getPlacesNearby(){
   console.log('getPlacesNearby')
 
-  var url = 'https://maps.googleapis.com/maps/api/place/textsearch/json?query=restaurants+in+isla+vista&key=AIzaSyCjBjBHM4KRgn5WDcF_f4RxCRAGTT4dsr4';
+  const proxyurl = "https://cors-anywhere.herokuapp.com/";
+
+  xhttp.open("GET", proxyurl + "https://maps.googleapis.com/maps/api/place/textsearch/json?query=restaurants+in+isla+vista&key=AIzaSyCjBjBHM4KRgn5WDcF_f4RxCRAGTT4dsr4");
   var request = new XMLHttpRequest();
   request.onreadystatechange = function() {
     if (request.readyState == 4 && request.status == 200) {
