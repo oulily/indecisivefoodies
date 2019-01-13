@@ -98,13 +98,13 @@ class PersonHandler(webapp2.RequestHandler):
 class SwipePage(webapp2.RequestHandler):
     def get(self):
 
-        all_likes = Like.query().fetch()
-
-        rest1_likes []
-        for like in all_likes:
-            if like in all_likes.filter(Like.rest == rest1).get()
-                rest1_likes.append(like)
-
+        # all_likes = Like.query().fetch()
+        #
+        # rest1_likes []
+        # for like in all_likes:
+        #     if like in all_likes.filter(Like.rest == rest1).get()
+        #         rest1_likes.append(like)
+        #
 
         template = env.get_template("templates/swipe.html")
         self.response.write(template.render())
