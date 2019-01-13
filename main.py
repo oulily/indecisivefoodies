@@ -24,8 +24,7 @@ class Filter(ndb.Model): # creates an object
 
 class Person(ndb.Model):
     name = ndb.StringProperty()
-    code = ndb.IntegerProperty()
-
+    code = ndb.StringProperty()
 
 class Like(ndb.Model):
     friend = ndb.StringProperty()
@@ -58,9 +57,15 @@ class InitiatorHandler(webapp2.RequestHandler):
         priority = self.request.get("priority")
         number = self.request.get("number")
 
+        code = self.request.get("code")
+        name = self.request.get("name")
         # 2. Read/write from the database
+
         filter = Filter(groupname=groupname, zipcode=zipcode, priority=priority, number=number) # creates an instance of an object
         filter.put() #adds filter object to database
+
+        person = Person(code=code, name=name)
+        person.put()
 
         # 3. Render the response
         time.sleep(2) # gives it time to render
@@ -94,8 +99,6 @@ class SwipePage(webapp2.RequestHandler):
     def get(self):
 
         likes = Like.query().fetch()
-
-
 
         template = env.get_template("templates/swipe.html")
         self.response.write(template.render())
