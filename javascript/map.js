@@ -10,7 +10,6 @@ function getPlacesNearby(){
       var res = resp.results;
     }
   }
-  // header("Access-Control-Allow-Credentials:true");
 
   request.open("GET", proxyurl + "https://maps.googleapis.com/maps/api/place/textsearch/json?query=restaurants+in+isla+vista&key=AIzaSyCjBjBHM4KRgn5WDcF_f4RxCRAGTT4dsr4");
   console.log('sending request to places')
