@@ -38,7 +38,7 @@ function placeNames(results) {
 }
 
 function placePics(results){
-  console.log('placenames')
+  console.log('placepics')
   document.getElementById("firstpic").src = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=" + results[0].photos[2] + "&key=AIzaSyCjBjBHM4KRgn5WDcF_f4RxCRAGTT4dsr4";
 }
 
