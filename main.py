@@ -112,6 +112,21 @@ class SwipePage(webapp2.RequestHandler):
     def post(self):
         self.redirect("/swipe")
 
+class ResultsHandler(webapp2.RequestHandler):
+    def post(self):
+
+        time.sleep(2)
+        self.redirect("/results")
+
+class ResultsPage(webapp2.RequestHandler):
+    def get(self):
+
+        template = env.get_template("templates/results.html")
+        self.response.write(template.render())
+
+    def post(self):
+        self.redirect("/results")
+
 
 app = webapp2.WSGIApplication([
     ("/", MainPage),
@@ -121,4 +136,6 @@ app = webapp2.WSGIApplication([
     ("/joiner", JoinerPage),
     ("/personhandler", PersonHandler),
     ("/swipe", SwipePage),
+    ("/resultshandler", ResultsHandler),
+    ("/results", ResultsPage),
 ], debug=True)

@@ -21,12 +21,13 @@ function getPlacesNearby(){
   console.log('getPlacesNearby')
 
   //add current location
-  var url = 'https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=' + ref + '&key=AIzaSyAbzn5BJaxvdYIzkExoQHnZkq5hVIvMCeI';
+  var url = 'https://maps.googleapis.com/maps/api/place/textsearch/json?query=restaurants+in+isla+vista&key=AIzaSyCjBjBHM4KRgn5WDcF_f4RxCRAGTT4dsr4';
   var server = 'http://localhost:8080/?url='+ encodeURIComponent(url);
   var request = new XMLHttpRequest();
   request.onreadystatechange = function() {
     if (request.readyState == 4 && request.status == 200) {
-      var resp = JSON.parse(request.response).results;
+      var resp = JSON.parse(request.response);
+      console.log(resp.results);
       onPlacesSuccess(resp);
     }
   }
