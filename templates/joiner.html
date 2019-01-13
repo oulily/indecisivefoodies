@@ -11,7 +11,10 @@
     <h1>Grumble</h1>
     join a grumble group!<br>
     let's decide where to eat.
-    <form action="/personhandler">
+    <form action="/personhandler" method="post">
+      <h2>Your Name:</h2>
+      <input type="text" name="name">
+      <br><br>
       <h2>Grumble Code:</h2>
       <input type="text" name="code">
       <br><br>
@@ -22,5 +25,4 @@
       <button class="button button1">BACK</button>
     </form>
     <br><br>
-
 </body>

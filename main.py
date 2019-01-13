@@ -23,9 +23,12 @@ class Filter(ndb.Model): # creates an object
     number = ndb.StringProperty()
 
 class Person(ndb.Model):
+    name = ndb.StringProperty()
     code = ndb.IntegerProperty()
-    like = ndb.StructuredProperty(Restaurant)
-    superlike = ndb.StructuredProperty(Restaurant)
+
+class Like(ndb.Model):
+    name = ndb.StringProperty()
+    rest = ndb.StringProperty()
 
 env = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
@@ -69,23 +72,30 @@ class JoinerPage(webapp2.RequestHandler):
         self.response.write(template.render())
 
     def post(self):
-        name = self.request.get("name")
         self.redirect("/joiner")
 
 class PersonHandler(webapp2.RequestHandler):
     def post(self):
         code = self.request.get("code")
+        name = self.request.get("name")
 
-        #person = Person(code=code, )
+        person = Person(code=code, name=name)
+        person.put()
+
+        time.sleep(2)
         self.redirect("/swipe")
 
-class SwipeHandler(webapp2.RequestHandler):
+class SwipePage(webapp2.RequestHandler):
     def get(self):
+
+        likes = Like.query().fetch()
+
+
+
         template = env.get_template("templates/swipe.html")
         self.response.write(template.render())
 
     def post(self):
-
         self.redirect("/swipe")
 
 
@@ -96,5 +106,5 @@ app = webapp2.WSGIApplication([
     ("/initiator", InitiatorPage),
     ("/joiner", JoinerPage),
     ("/personhandler", PersonHandler),
-    ("/swipe", SwipeHandler),
+    ("/swipe", SwipePage),
 ], debug=True)
