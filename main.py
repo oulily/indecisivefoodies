@@ -24,8 +24,7 @@ class Filter(ndb.Model): # creates an object
 
 class Person(ndb.Model):
     name = ndb.StringProperty()
-    code = ndb.IntegerProperty()
-
+    code = ndb.StringProperty()
 
 class Like(ndb.Model):
     friend = ndb.StringProperty()
