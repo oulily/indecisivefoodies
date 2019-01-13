@@ -34,14 +34,7 @@ function placePics(results){
   document.getElementById("firstpic").src = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=" + results[0].photos[0].photo_reference + "&key=AIzaSyCjBjBHM4KRgn5WDcF_f4RxCRAGTT4dsr4";
 }
 
-function placeRatings(results){
-  console.log('placeratings')
-  document.getElementById("firstrate").innerHTML = results[0].rating;
-  document.getElementById("secondrate").innerHTML = results[1].rating;
-  document.getElementById("thirdrate").innerHTML = results[2].rating;
-  document.getElementById("fourthrate").innerHTML = results[3].rating;
-  document.getElementById("fifthrate").innerHTML = results[4].rating;
-  document.getElementById("sixthrate").innerHTML = results[5].rating;
 
-}
+
+
 getPlacesNearby();
