@@ -1,45 +1,35 @@
-// WebSettings ws = wv.getSettings();
-// ws.setJavaScriptEnabled(true);
-// wv.addJavascriptInterface(new Object()
-// {
-//   public void performClick()
-//   {
-//     window.onload = function() {
-//     var startPos;
-//     var geoSuccess = function(position) {
-//     startPos = position;
-//     document.getElementById('startLat').innerHTML = startPos.coords.latitude;
-//     document.getElementById('startLon').innerHTML = startPos.coords.longitude;
-//   };
-//   navigator.geolocation.getCurrentPosition(geoSuccess);
-// }; //gets users geolocation
-//
-//   ?location=startPos.coords.latitude,startPos.coords.longitude
-//   &radius=5000
-//   &types=food
-//   &key=AIzaSyCjBjBHM4KRgn5WDcF_f4RxCRAGTT4dsr4
-//
-//   var x = document.getElementById("demo");
-//   function getLocation() {
-//     if (navigator.geolocation) {
-//       navigator.geolocation.getCurrentPosition(showPosition, showError);
-//     } else {
-//       x.innerHTML = "Geolocation is not supported by this browser.";
-//     }
-//   }
-
-function getLocation() {
+function initCoords() {
   if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(returnPosition(position));
+    navigator.geolocation.getCurrentPosition(initialize, locationError);
   } else {
-    x.innerHTML = "Geolocation is not supported by this browser.";
+    showError("Your browser does not support Geolocation!");
   }
 }
+var lat;
+var lon;
+function initialize(position) {
+    lat = position.coords.latitude;
+    lon = position.coords.longitude;
+    var acc = position.coords.accuracy;
 
-function returnPosition(position) {
-  return position.coords.latitude+","+position.coords.longitude;
+    // Debugging
+    console.log(position.coords);
+    console.log("Accuracy: "+acc+"\nLatitude: "+lat+"\nLongitude: "+lon);
+
+    // Google Maps API
+    var myLatlng = new google.maps.LatLng(lat,lon);
+    var mapOptions = {
+        center: new google.maps.LatLng(lat, lon),
+        zoom: 12,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    var map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+    var marker = new google.maps.Marker({
+        position: myLatlng,
+        map: map,
+        title:"Hello World!"
+    });
 }
-
 
 function getPlacesNearby(){
   console.log('getPlacesNearby')
@@ -56,7 +46,7 @@ function getPlacesNearby(){
     }
   }
 
-  request.open("GET", proxyurl + "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+returnPosition()+"+&radius=1500&type=restaurant&key=AIzaSyCjBjBHM4KRgn5WDcF_f4RxCRAGTT4dsr4");
+  request.open("GET", proxyurl + "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=1500&type=restaurant&key=AIzaSyCjBjBHM4KRgn5WDcF_f4RxCRAGTT4dsr4");
   console.log('sending request to places')
   request.send();
 }
