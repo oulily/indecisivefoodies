@@ -24,8 +24,14 @@ class Filter(ndb.Model): # creates an object
 
 class Person(ndb.Model):
     code = ndb.IntegerProperty()
-    like = ndb.StructuredProperty(Restaurant)
-    superlike = ndb.StructuredProperty(Restaurant)
+
+class Likes(ndb.Model):
+    friend = ndb.StringProperty()
+    rest = ndb.StringProperty()
+
+class Superlikes(ndb.Model):
+    friend2 = ndb.StringProperty()
+    rest2 = ndb.StringProperty()
 
 env = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
@@ -85,8 +91,7 @@ class SwipeHandler(webapp2.RequestHandler):
         self.response.write(template.render())
 
     def post(self):
-
-        self.redirect("/swipe")
+    self.redirect("/swipe")
 
 
 app = webapp2.WSGIApplication([
