@@ -14,7 +14,7 @@ h1 {
   font-family: "Helvetica Neue";
   color: white;
   font-size: 50px;
-  letter-spacing: 10px;
+  letter-spacing: 11px;
   font-variant: small-caps;
   animation-duration: 3s;
   animation-name: fadein;
@@ -39,7 +39,7 @@ h2{
   text-decoration: none;
   display: inline-block;
   font-family: "Helvetica Neue";
-  font-size: 12px;
+  font-size: 14px;
   margin: 4px 2px;
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;

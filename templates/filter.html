@@ -8,7 +8,7 @@
 
 <body>
   <header>
-    <h1>Grumble</h1>
+    <h1>Grumble<img src="images/burger.png" alt="grumble logo" style="width:55px;height:42px;"></h1>
     create a new grumble group!<br>
     help us filter where to eat.
     <form action="/inithandler" method="post">
@@ -16,18 +16,13 @@
     <input type="text" name="groupname" required="required">
     <br>
     <h2>group size:</h2>
-    <input type="text" name="number" required="required">
-    <br>
+    <input type="text" name="number" required="required" placeholder="Input numerical ex.4">
     <h2>zipcode:</h2>
-    <input type="text" name="zipcode" required="required">
-    <br>
-    <h2>arrival time:</h2>
-    <input type="time" name="appt"
-       min="0:00" max="23:59" required="required">
+    <input type="text" name="zipcode" required="required" maxlength="5">
     <br>
     <h2>priority:</h2>
       <select name="priority" id="selects" required="required">
-        <option value="Price">PRICE</option>
+        <option value="Low Price">PRICE</option>
       	<option value="Distance">DISTANCE</option>
       </select>
       <br><br>

@@ -15,23 +15,6 @@ function getPlacesNearby(){
   request.send();
 }
 
-function getPlacesNearby(){
-  console.log('getPlacesNearby')
-  const proxyurl = "https://cors-anywhere.herokuapp.com/";
-
-  var request = new XMLHttpRequest();
-  request.onreadystatechange = function() {
-    if (request.readyState == 4 && request.status == 200) {
-      var resp = JSON.parse(request.response);
-      placeNames(resp.results);
-    }
-  }
-
-  request.open("GET", proxyurl + "https://maps.googleapis.com/maps/api/place/textsearch/json?query=restaurants+in+isla+vista&key=AIzaSyCjBjBHM4KRgn5WDcF_f4RxCRAGTT4dsr4");
-  console.log('sending request to places')
-  request.send();
-}
-
 function placeNames(results) {
   console.log('placenames')
   // for (var i = 0; i < 6; i++) {
