@@ -49,14 +49,28 @@ h2{
     line-height: 1.42857;
 }
 
-.myButton{
-    background:url(./Downloads/grumblex.png) no-repeat;
-    cursor:pointer;
-    border:none;
-    width:100px;
-    height:100px;
+.button{
+  background-color:#b11a21
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family: "Helvetica Neue";
+  font-size: 12px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.button1 {
+  background-color: black;
+  color: white;
+  border: 2px solid black;
 }
 
-myButton:active {
-     background:url(./Downloads/grumblex.png) no-repeat;
+.button1:hover {
+  background-color: white;
+  color: black;
 }
