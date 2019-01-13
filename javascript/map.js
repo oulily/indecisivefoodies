@@ -13,16 +13,19 @@ function getPlacesNearby(){
       onPlacesSuccess(resp);
     }
   }
-  request.header("Access-Control-Allow-Origin:*");
-  // header("Access-Control-Allow-Methods:GET,POST");
-  // header("Access-Control-Allow-Headers:Content-Type");
+
+
+
   // header("Access-Control-Allow-Credentials:true");
 
   request.open('GET', url);
+  request.setRequestHeader("Access-Control-Allow-Origin", "*");
+  request.setRequestHeader("Access-Control-Allow-Methods", "GET,POST");
+  request.setRequestHeader("Access-Control-Allow-Headers", "Origin, Content-Type, X-Auth-Token");
   console.log('sending request to places')
   request.send();
-  var service = new google.maps.places.PlacesService(map);
 }
+
 getPlacesNearby();
 // function getCurrentLocation(){
 //   console.log('getCurrentLocation')
